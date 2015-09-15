@@ -22,7 +22,7 @@ module.exports = function (Impromptu, register, dockerMachine) {
   register('isNotRunning', {
     cache: 'global',
     update: function (done) {
-      boot2docker.isRunning(function (err, isRunning) {
+      dockerMachine.isRunning(function (err, isRunning) {
         done(null, ! isRunning)
       })
     }
